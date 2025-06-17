@@ -1,13 +1,19 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>accessibility</ion-title>
+    <ion-title>Accessibility</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">accessibility</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label>Wheelchair Friendly</ion-label>
+    <ion-toggle></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-label>Surface Type Filter</ion-label>
+    <ion-select>
+      <ion-select-option value="paved">Paved</ion-select-option>
+      <ion-select-option value="gravel">Gravel</ion-select-option>
+    </ion-select>
+  </ion-item>
 </ion-content>
