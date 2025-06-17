@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package com.gitmenalang.festivalpath;
 
 import com.getcapacitor.BridgeActivity;
 
