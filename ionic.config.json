@@ -1,0 +1,7 @@
+{
+  "name": "festivalpath",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
