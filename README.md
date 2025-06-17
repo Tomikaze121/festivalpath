@@ -63,8 +63,7 @@ Project Lead: Tomi - https://github.com/Tomikaze1
 
 ```bash
 # Clone repository
-git clone https://github.com/Tomikaze1/FestivalPath.git
-
+git clone https://github.com/Tomikaze121/festivalpath.git
 # Install dependencies
 cd festivalpath
 npm install
