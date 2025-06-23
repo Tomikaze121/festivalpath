@@ -1,22 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FirestoreService } from '../services/firestore.service';
 
 @Component({
   selector: 'app-rewards',
   templateUrl: './rewards.page.html',
   styleUrls: ['./rewards.page.scss'],
-  standalone:false,
+  standalone: false
 })
-export class RewardsPage {
-  userTips = [
-    {
-      title: 'Shortcut Behind Stage 3',
-      description: 'Saves 15 mins walking through artist alley.',
-      timeLeft: '2h 30m'
-    },
-    {
-      title: 'Food Court Path',
-      description: 'Avoids congestion near the sponsor booths.',
-      timeLeft: '5h 10m'
-    }
-  ];
+export class RewardsPage implements OnInit {
+  shortcuts: any[] = [];
+  Date = Date; 
+
+  constructor(private firestore: FirestoreService) {}
+
+  ngOnInit() {
+  this.firestore.getShortcuts().subscribe(data => {
+    console.log('🔥 Raw shortcuts:', data);
+    const now = Date.now();
+    this.shortcuts = data.filter(s =>
+      s.name && s.lat && s.lng && s.expiresAt > now
+    );
+  });
 }
+
+}
+
+

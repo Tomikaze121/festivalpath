@@ -1,17 +1,31 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Report Shortcut</ion-title>
+    <ion-title> Shortcut</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
   <ion-item>
-    <ion-label position="floating">Landmark</ion-label>
-    <ion-input></ion-input>
+    <ion-label position="floating">Shortcut Name</ion-label>
+    <ion-input [(ngModel)]="shortcut.name"></ion-input>
   </ion-item>
+
   <ion-item>
-    <ion-label position="floating">Shortcut Description</ion-label>
-    <ion-textarea></ion-textarea>
+    <ion-label position="floating">Description</ion-label>
+    <ion-textarea [(ngModel)]="shortcut.description"></ion-textarea>
   </ion-item>
-  <ion-button expand="block">Submit Shortcut</ion-button>
+
+  <ion-item>
+    <ion-label position="floating">Latitude</ion-label>
+    <ion-input type="number" [(ngModel)]="shortcut.lat"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Longitude</ion-label>
+    <ion-input type="number" [(ngModel)]="shortcut.lng"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" class="ion-margin-top" (click)="submitShortcut()">
+    Submit
+  </ion-button>
 </ion-content>
